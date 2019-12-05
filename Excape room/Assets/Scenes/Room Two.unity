@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 154037308}
   m_Layer: 0
   m_Name: PlayerCamera
-  m_TagString: MainCamera
+ m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -674,6 +674,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+
 --- !u!1 &970423922
 GameObject:
   m_ObjectHideFlags: 0
@@ -1318,6 +1319,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+
 --- !u!1 &1470441408
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,22 +9,24 @@ public class PlayerRaycasting : MonoBehaviour
     public float distanceToSee;
     RaycastHit whatIHit;
     Scene test;
-    public GameObject Gamecontroller;
+    public GameObject Gamecontroller, text;
 
     // Start is called before the first frame update
     void Start()
     {
         test = SceneManager.GetActiveScene();
+        text.SetActive(false);
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        text.SetActive(false);
         Debug.DrawRay(this.transform.position, this.transform.forward * distanceToSee, Color.magenta);
         if (Physics.Raycast(this.transform.position, this.transform.forward, out whatIHit, distanceToSee))
         {
-
+            
             if (test.name.Equals("Room One"))
             {   
                 
@@ -39,6 +41,11 @@ public class PlayerRaycasting : MonoBehaviour
                 
             }
             else if (test.name.Equals("Room Two"))
+            if (whatIHit.collider.CompareTag("Interactable"))
+            {
+                text.SetActive(true);
+            }
+            if(whatIHit.collider.gameObject.name == "Correct")
             {
                 Debug.Log("um wtf jim");                        
                 RoomTwoGame hmm = Gamecontroller.GetComponent<RoomTwoGame>();

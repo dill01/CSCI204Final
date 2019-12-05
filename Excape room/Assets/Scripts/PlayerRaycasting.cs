@@ -16,7 +16,7 @@ public class PlayerRaycasting : MonoBehaviour
     {
         test = SceneManager.GetActiveScene();
         text.SetActive(false);
-        
+
     }
 
     // Update is called once per frame
@@ -24,33 +24,46 @@ public class PlayerRaycasting : MonoBehaviour
     {
         text.SetActive(false);
         Debug.DrawRay(this.transform.position, this.transform.forward * distanceToSee, Color.magenta);
-        if(Physics.Raycast(this.transform.position, this.transform.forward, out whatIHit, distanceToSee))
+        if (Physics.Raycast(this.transform.position, this.transform.forward, out whatIHit, distanceToSee))
         {
+            
+            if (test.name.Equals("Room One"))
+            {   
+                
+                RoomOneGame hmm = Gamecontroller.GetComponent<RoomOneGame>();             
+                if (whatIHit.collider.gameObject.name == "CellLockPanel" && Input.GetKeyDown(KeyCode.E))
+                {
+                    Debug.Log("Cell Lock Panel");
+                    hmm.CellLockPanelFlag = true;
+                    hmm.progress();
+                }
+                
+                
+            }
+            else if (test.name.Equals("Room Two"))
             if (whatIHit.collider.CompareTag("Interactable"))
             {
                 text.SetActive(true);
             }
             if(whatIHit.collider.gameObject.name == "Correct")
             {
-                Debug.Log("I touched the thing");
-                if (Input.GetKeyDown(KeyCode.E))
+                Debug.Log("um wtf jim");                        
+                RoomTwoGame hmm = Gamecontroller.GetComponent<RoomTwoGame>();
+                hmm.progress();
+                if (whatIHit.collider.gameObject.name == "Correct")
                 {
-                    Debug.Log("You Killed the thing");
-                    whatIHit.collider.gameObject.SetActive(false);
-                    if(test.name.Equals("Room One"))
+                    Debug.Log("I touched the thing");
+                    if (Input.GetKeyDown(KeyCode.E))
                     {
+                        Debug.Log("You Killed the thing");
+                        whatIHit.collider.gameObject.SetActive(false);
 
-                    }
-                    else if(test.name.Equals("Room Two"))
-                    {
-                        Debug.Log("um wtf jim");
-                        RoomTwoGame hmm = Gamecontroller.GetComponent<RoomTwoGame>();
-                        hmm.progress();
 
-                        
                     }
                 }
+
             }
+            
         }
     }
 }

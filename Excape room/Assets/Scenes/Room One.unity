@@ -1483,10 +1483,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76427e3fa3b0484419819948927e7247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceToSee: 0
-  Doorup: {fileID: 0}
-  LeftWall: {fileID: 0}
-  RightWall: {fileID: 0}
+  distanceToSee: 5
+  Gamecontroller: {fileID: 2011536932}
 --- !u!1 &278606089
 GameObject:
   m_ObjectHideFlags: 0
@@ -1614,7 +1612,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpen: 0
   complete: 0
-  Doorup: {fileID: 0}
+  Doorup: {fileID: 278606089}
 --- !u!1 &290559398
 GameObject:
   m_ObjectHideFlags: 0
@@ -8308,7 +8306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpen: 0
   complete: 0
-  Doorup: {fileID: 0}
+  Doorup: {fileID: 624068399}
 --- !u!95 &624068402
 Animator:
   serializedVersion: 3
@@ -14087,7 +14085,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpen: 0
   complete: 0
-  Doorup: {fileID: 0}
+  Doorup: {fileID: 834229326}
 --- !u!95 &834229332
 Animator:
   serializedVersion: 3
@@ -16402,7 +16400,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpen: 0
   complete: 0
-  Doorup: {fileID: 0}
+  Doorup: {fileID: 1429248805}
 --- !u!95 &1429248811
 Animator:
   serializedVersion: 3
@@ -21220,7 +21218,7 @@ GameObject:
   - component: {fileID: 1546932011}
   - component: {fileID: 1546932010}
   m_Layer: 0
-  m_Name: Cell Lock
+  m_Name: CellLockPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21313,7 +21311,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpen: 0
   complete: 0
-  Doorup: {fileID: 0}
+  Doorup: {fileID: 1546932005}
 --- !u!95 &1546932011
 Animator:
   serializedVersion: 3
@@ -21591,7 +21589,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpen: 0
   complete: 0
-  Doorup: {fileID: 0}
+  Doorup: {fileID: 1670521123}
 --- !u!95 &1670521126
 Animator:
   serializedVersion: 3
@@ -27799,8 +27797,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2011536933}
+  - component: {fileID: 2011536934}
   m_Layer: 0
-  m_Name: RoomOneGameController
+  m_Name: Game Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27820,6 +27819,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2011536934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011536932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a090043224856d445b446c1a570787af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CellLockPanelFlag: 0
 --- !u!1 &2030386991
 GameObject:
   m_ObjectHideFlags: 0

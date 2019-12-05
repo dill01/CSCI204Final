@@ -72,7 +72,7 @@ public class PlayerRaycasting : MonoBehaviour
                     whatIHit.collider.gameObject.SetActive(false);
                     hmm.interact("Wrong Button");
                 }
-                else if (whatIHit.collider.gameObject.name == "Blast Door Button 3 (Correct)" && Input.GetKeyDown(KeyCode.E))
+                else if (whatIHit.collider.gameObject.name == "Blast Door Button 3 (correct)" && Input.GetKeyDown(KeyCode.E))
                 {
                     Debug.Log("Correct Button");
                     whatIHit.collider.gameObject.SetActive(false);
@@ -89,6 +89,26 @@ public class PlayerRaycasting : MonoBehaviour
                     Debug.Log("we Hit the Switch");
                     whatIHit.collider.gameObject.SetActive(false);
                     hmm.interact("Panel Switch");
+                }
+                else if (whatIHit.collider.gameObject.name == "Force Field Rotor" && Input.GetKeyDown(KeyCode.E))
+                {
+                    Debug.Log("turning the thing");
+                    hmm.interact("Force Field Rotor");
+                    
+                }
+                else if (whatIHit.collider.gameObject.name == "Force Field Switch" && Input.GetKeyDown(KeyCode.E))
+                {
+                    Debug.Log("trying the thing");
+                    hmm.interact("Force Field Switch");
+
+                }
+                else if (whatIHit.collider.gameObject.name == "Grate bottom" || whatIHit.collider.gameObject.name == "Grate top" || whatIHit.collider.gameObject.name == "Grate left" || whatIHit.collider.gameObject.name == "Grate right" || whatIHit.collider.gameObject.name == "Grate bar 1" || whatIHit.collider.gameObject.name == "Grate bar 2" || whatIHit.collider.gameObject.name == "Grate bar 3")
+                {
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        Debug.Log("moving to the next room");
+                        hmm.interact("Service Grate");
+                    }
                 }
 
             }

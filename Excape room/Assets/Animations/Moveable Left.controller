@@ -40,7 +40,7 @@ AnimatorStateMachine:
     m_Position: {x: 200, y: 0, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7835974969060428565}
-    m_Position: {x: 370, y: 110, z: 0}
+    m_Position: {x: 360, y: 110, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -60,7 +60,7 @@ AnimatorController:
   m_Name: Moveable Left
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: Left
+  - m_Name: Close
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -88,7 +88,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Left
+    m_ConditionEvent: Close
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -7835974969060428565}

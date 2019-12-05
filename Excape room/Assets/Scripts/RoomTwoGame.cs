@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RoomTwoGame : MonoBehaviour
 {
@@ -44,20 +45,16 @@ public class RoomTwoGame : MonoBehaviour
         {
             DoorAnim.SetBool("Slide", true);
         }
-        else if (hmm == 3)
-        {
-
-        }
-        else if (hmm == 4)
-        {
-
-        }
-
+        
     }
 
     public int Getprogression()
     {
         return progression;
     }
-    
+    public void startScreen()
+    {
+        SceneManager.LoadScene("Start Scene");
+    }
+
 }

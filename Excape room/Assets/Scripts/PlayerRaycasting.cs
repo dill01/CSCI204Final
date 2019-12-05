@@ -28,17 +28,43 @@ public class PlayerRaycasting : MonoBehaviour
         {
             
             if (test.name.Equals("Room One"))
-            {   
-                
+            {
+                if (whatIHit.collider.CompareTag("Interactable"))
+                {
+                    text.SetActive(true);
+                }
                 RoomOneGame hmm = Gamecontroller.GetComponent<RoomOneGame>();             
                 if (whatIHit.collider.gameObject.name == "CellLockPanel" && Input.GetKeyDown(KeyCode.E))
                 {
-                    Debug.Log("Cell Lock Panel");
-                    hmm.CellLockPanelFlag = true;
-                    hmm.progress();
+                    Debug.Log("CellLockPanel");
+                    hmm.interact("CellLockPanel");
                 }
-                
-                
+                else if (whatIHit.collider.gameObject.name == "Wire 1" && Input.GetKeyDown(KeyCode.E))
+                {
+                    Debug.Log("Wire 1");
+                    whatIHit.collider.gameObject.SetActive(false);
+                    hmm.interact("Wire 1");
+                }
+                else if (whatIHit.collider.gameObject.name == "Wire 2" && Input.GetKeyDown(KeyCode.E))
+                {
+                    Debug.Log("Wire 2");
+                    whatIHit.collider.gameObject.SetActive(false);
+                    hmm.interact("Wire 2");
+                }
+                else if (whatIHit.collider.gameObject.name == "Wire 3 (correct)" && Input.GetKeyDown(KeyCode.E))
+                {
+                    Debug.Log("Wire 3");
+                    whatIHit.collider.gameObject.SetActive(false);
+                    hmm.interact("Wire 3");
+                }
+                else if (whatIHit.collider.gameObject.name == "Wire 4" && Input.GetKeyDown(KeyCode.E))
+                {
+                    Debug.Log("Wire 4");
+                    whatIHit.collider.gameObject.SetActive(false);
+                    hmm.interact("Wire 4");
+                }
+
+
             }
             else if (test.name.Equals("Room Two"))
             if (whatIHit.collider.CompareTag("Interactable"))

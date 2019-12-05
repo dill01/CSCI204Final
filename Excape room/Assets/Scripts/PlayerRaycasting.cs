@@ -10,6 +10,7 @@ public class PlayerRaycasting : MonoBehaviour
     RaycastHit whatIHit;
     Scene test;
     public GameObject Gamecontroller, text;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -22,11 +23,12 @@ public class PlayerRaycasting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+   
         text.SetActive(false);
         Debug.DrawRay(this.transform.position, this.transform.forward * distanceToSee, Color.magenta);
         if (Physics.Raycast(this.transform.position, this.transform.forward, out whatIHit, distanceToSee))
         {
-            
+
             if (test.name.Equals("Room One"))
             {
                 RoomOneGame hmm = Gamecontroller.GetComponent<RoomOneGame>();
@@ -34,6 +36,7 @@ public class PlayerRaycasting : MonoBehaviour
                 {
                     text.SetActive(true);
                 }                             
+
                 if (whatIHit.collider.gameObject.name == "CellLockPanel" && Input.GetKeyDown(KeyCode.E))
                 {
                     Debug.Log("CellLockPanel");
@@ -90,27 +93,35 @@ public class PlayerRaycasting : MonoBehaviour
 
             }
             else if (test.name.Equals("Room Two"))
-            if (whatIHit.collider.CompareTag("Interactable"))
             {
-                text.SetActive(true);
-            }
-            if(whatIHit.collider.gameObject.name == "Correct")
-            {
-                Debug.Log("um wtf jim");                        
-                RoomTwoGame hmm = Gamecontroller.GetComponent<RoomTwoGame>();
-                hmm.progress();
+                if (whatIHit.collider.CompareTag("Interactable"))
+                {
+                    text.SetActive(true);
+                    
+
+                }
                 if (whatIHit.collider.gameObject.name == "Correct")
                 {
-                    Debug.Log("I touched the thing");
-                    if (Input.GetKeyDown(KeyCode.E))
+                    Debug.Log("um wtf jim");
+                    RoomTwoGame hmm = Gamecontroller.GetComponent<RoomTwoGame>();
+     
+                    if (whatIHit.collider.gameObject.name == "Correct" && Input.GetKeyDown(KeyCode.E))
                     {
-                        Debug.Log("You Killed the thing");
-                        whatIHit.collider.gameObject.SetActive(false);
+                        
+                            hmm.progress();
+                            Debug.Log("You Killed the thing");
+                            whatIHit.collider.gameObject.SetActive(false);
+                            if (hmm.Getprogression() == 3)
+                            {
+                                text.GetComponent<UnityEngine.UI.Text>().text = "You Win";
+                                text.SetActive(true);
+                                hmm.startScreen();
+                            }
 
-
+                        
                     }
-                }
 
+                }
             }
             
         }

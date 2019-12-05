@@ -2445,7 +2445,7 @@ GameObject:
   - component: {fileID: 393929379}
   m_Layer: 0
   m_Name: Buttons
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8086,8 +8086,8 @@ GameObject:
   - component: {fileID: 595642397}
   - component: {fileID: 595642396}
   m_Layer: 0
-  m_Name: Button
-  m_TagString: Untagged
+  m_Name: Blast Door Button 2
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8561,8 +8561,8 @@ GameObject:
   - component: {fileID: 688362346}
   - component: {fileID: 688362345}
   m_Layer: 0
-  m_Name: Button
-  m_TagString: Untagged
+  m_Name: Blast Door Button 1
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14673,8 +14673,8 @@ GameObject:
   - component: {fileID: 1005571197}
   - component: {fileID: 1005571196}
   m_Layer: 0
-  m_Name: Button (correct)
-  m_TagString: Untagged
+  m_Name: Blast Door Button 3 (correct)
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15834,7 +15834,7 @@ GameObject:
   - component: {fileID: 1338668093}
   m_Layer: 0
   m_Name: Panel Switch
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28100,6 +28100,7 @@ MonoBehaviour:
   WireFourBrokeBottom: {fileID: 1797964455}
   CellLockPanel: {fileID: 1546932005}
   CellDoor: {fileID: 278606089}
+  BlastDoor: {fileID: 624068399}
 --- !u!1 &2030386991
 GameObject:
   m_ObjectHideFlags: 0
@@ -28204,7 +28205,7 @@ GameObject:
   - component: {fileID: 2034265725}
   m_Layer: 0
   m_Name: Force Field Puzzle
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

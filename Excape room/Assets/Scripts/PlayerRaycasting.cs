@@ -8,20 +8,14 @@ public class PlayerRaycasting : MonoBehaviour
 
     public float distanceToSee;
     RaycastHit whatIHit;
-    private RoomTwoGame two;
     Scene test;
-    public GameObject Doorup;
-    public GameObject LeftWall;
-    public GameObject RightWall;
-    Animator DoorAnim, RightAnim, LeftAnim;
+    public GameObject Gamecontroller;
+
     // Start is called before the first frame update
     void Start()
     {
         test = SceneManager.GetActiveScene();
-        two = new RoomTwoGame();
-        DoorAnim = Doorup.GetComponent<Animator>();
-        LeftAnim = LeftWall.GetComponent<Animator>();
-        RightAnim = RightWall.GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame
@@ -44,29 +38,10 @@ public class PlayerRaycasting : MonoBehaviour
                     else if(test.name.Equals("Room Two"))
                     {
                         Debug.Log("um wtf jim");
-                        two.progress();
-                        int hmm = two.Getprogression();
-                        if (hmm == 1)
-                        {
-                            Debug.Log("wtf dude");
-                            LeftAnim.SetBool("Close", false);
-                            RightAnim.SetBool("Close", false);
-                            LeftAnim.SetBool("Open", true);
-                            RightAnim.SetBool("Open", true);
+                        RoomTwoGame hmm = Gamecontroller.GetComponent<RoomTwoGame>();
+                        hmm.progress();
 
-                        }
-                        else if (hmm == 2)
-                        {
-                            DoorAnim.SetBool("Slide", true);
-                        }
-                        else if (hmm == 3)
-                        {
-
-                        }
-                        else if (hmm == 4)
-                        {
-
-                        }
+                        
                     }
                 }
             }

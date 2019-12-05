@@ -30,8 +30,29 @@ public class RoomTwoGame : MonoBehaviour
         Debug.Log("I added a number");
         progression++;
         Debug.Log("Progesstion is now " + progression);
+        int hmm = progression;
+        if (hmm == 1)
+        {
+            Debug.Log("wtf dude");
+            LeftAnim.SetBool("Close", false);
+            RightAnim.SetBool("Close", false);
+            LeftAnim.SetBool("Open", true);
+            RightAnim.SetBool("Open", true);
 
-      
+        }
+        else if (hmm == 2)
+        {
+            DoorAnim.SetBool("Slide", true);
+        }
+        else if (hmm == 3)
+        {
+
+        }
+        else if (hmm == 4)
+        {
+
+        }
+
     }
 
     public int Getprogression()

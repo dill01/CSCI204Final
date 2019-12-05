@@ -16,14 +16,20 @@ public class RoomOneGame : MonoBehaviour
     public GameObject WireFourBrokeBottom;
     public GameObject CellLockPanel;
     public GameObject CellDoor;
-    Animator CellLockPanelAnim, CellDoorAnim;
+    public GameObject BlastDoor;
+    public GameObject ForceFieldControlPanel;
+    Animator CellLockPanelAnim, CellDoorAnim, BlastDoorAnim, ForceFieldControlPanelAnim;
     // Start is called before the first frame update
     void Start()
     {
         CellLockPanelAnim = CellLockPanel.GetComponent<Animator>();
         CellDoorAnim = CellDoor.GetComponent<Animator>();
+        BlastDoorAnim = BlastDoor.GetComponent<Animator>();
+        ForceFieldControlPanelAnim = ForceFieldControlPanel.GetComponent<Animator>();
         CellLockPanelAnim.SetBool("Slide", false);
         CellDoorAnim.SetBool("Slide", false);
+        BlastDoorAnim.SetBool("Slide", false);
+        ForceFieldControlPanelAnim.SetBool("Slide", false);
     }
 
     // Update is called once per frame
@@ -64,6 +70,23 @@ public class RoomOneGame : MonoBehaviour
             WireFourBrokeTop.SetActive(true);
             WireFourBrokeBottom.SetActive(true);
         }
+        else if (inString == "Correct Button")
+        {
+            Debug.Log("Button 3 is Correct");
+            BlastDoorAnim.SetBool("Slide", true);
+            
+        }
+        else if (inString == "Wrong Button")
+        {
+            Debug.Log("Wrong Button is wrong");
+            
+        }
+        else if (inString == "Panel Switch")
+        {
+            Debug.Log("opening the thing");
+            ForceFieldControlPanelAnim.SetBool("Slide", true);
+        }
+
     }
 
     public void setFlag(bool inFlag)

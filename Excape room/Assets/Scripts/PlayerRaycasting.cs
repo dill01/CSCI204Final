@@ -29,11 +29,11 @@ public class PlayerRaycasting : MonoBehaviour
             
             if (test.name.Equals("Room One"))
             {
+                RoomOneGame hmm = Gamecontroller.GetComponent<RoomOneGame>();
                 if (whatIHit.collider.CompareTag("Interactable"))
                 {
                     text.SetActive(true);
-                }
-                RoomOneGame hmm = Gamecontroller.GetComponent<RoomOneGame>();             
+                }                             
                 if (whatIHit.collider.gameObject.name == "CellLockPanel" && Input.GetKeyDown(KeyCode.E))
                 {
                     Debug.Log("CellLockPanel");
@@ -63,7 +63,30 @@ public class PlayerRaycasting : MonoBehaviour
                     whatIHit.collider.gameObject.SetActive(false);
                     hmm.interact("Wire 4");
                 }
-
+                else if (whatIHit.collider.gameObject.name == "Blast Door Button 1" && Input.GetKeyDown(KeyCode.E))
+                {
+                    Debug.Log("Wrong Button");
+                    whatIHit.collider.gameObject.SetActive(false);
+                    hmm.interact("Wrong Button");
+                }
+                else if (whatIHit.collider.gameObject.name == "Blast Door Button 3 (Correct)" && Input.GetKeyDown(KeyCode.E))
+                {
+                    Debug.Log("Correct Button");
+                    whatIHit.collider.gameObject.SetActive(false);
+                    hmm.interact("Correct Button");
+                }
+                else if (whatIHit.collider.gameObject.name == "Blast Door Button 2" && Input.GetKeyDown(KeyCode.E))
+                {
+                    Debug.Log("Wrong Button");
+                    whatIHit.collider.gameObject.SetActive(false);
+                    hmm.interact("Wrong Button");
+                }
+                else if (whatIHit.collider.gameObject.name == "Panel Switch" && Input.GetKeyDown(KeyCode.E))
+                {
+                    Debug.Log("we Hit the Switch");
+                    whatIHit.collider.gameObject.SetActive(false);
+                    hmm.interact("Panel Switch");
+                }
 
             }
             else if (test.name.Equals("Room Two"))
